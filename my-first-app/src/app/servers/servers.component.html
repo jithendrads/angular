@@ -25,5 +25,4 @@
 <p>{{ userName }}</p>
 
 <button class="btn-primary" [disabled]="userName===''" (click)="userName=''">Reset</button>-->
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of servers"></app-server>
