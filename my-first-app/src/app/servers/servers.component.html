@@ -1,4 +1,24 @@
-<button class="btn btn-primary" disabled>Add Server</button>
+<label>Server Name</label>
+<!--Approach one for two way binding-->
+<!--<input type="text" class="form-control" (input)="onUpdateServer($event)">-->
+<!--Approach two for two way binding-->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{ serverName }}</p>
 
+
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add Server</button>
+<!--String interpolation-->
+<p>{{ allowNewServer }}</p>
+
+<!-- using property binding-->
+<p [innerText]="allowNewServer"></p>
+<p>{{ serverCreationStatus }}</p>
+
+<!---->
+<label>Usename</label>
+<input type="text" class="form-control" [(ngModel)]="userName">
+<p>{{ userName }}</p>
+
+<button class="btn-primary" [disabled]="userName===''" (click)="userName=''">Reset</button>
 <app-server></app-server>
 <app-server></app-server>
